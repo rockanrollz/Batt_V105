@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="jquery-3.1.1.min.js"></script>
+<script src="jquery.tablesorter.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.0.3/jquery-confirm.min.js"></script>
+
+ <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<title>Battery</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+
+
+
+
+</head>
+<body>
+<!-- Header -->
+<div id="header">
+  <div class="shell">
+    <!-- Logo + Top Nav -->
+    <div id="top">
+      <h1><a href="#">Battery</a></h1>
+      <div id="top-navigation"> Welcome <a href="#"><strong>Administrator</strong></a> <span>|</span> <a href="#">Help</a> <span>|</span> <a href="#">Profile Settings</a> <span>|</span> <a href="#">Log out</a> </div>
+    </div>
+    <!-- End Logo + Top Nav -->
+    <!-- Main Nav -->
+    <div id="navigation">
+      <ul>
+        <li><a href="#" class="active"><span>Battery</span></a></li>
+        <li><a href="#"><span>New Articles</span></a></li>
+        <!--<li><a href="#"><span>User Management</span></a></li>
+        <li><a href="#"><span>Photo Gallery</span></a></li>
+        <li><a href="#"><span>Products</span></a></li>
+        <li><a href="#"><span>Services Control</span></a></li>-->
+      </ul>
+    </div>
+    <!-- End Main Nav -->
+  </div>
+</div>
+<!-- End Header -->
+<!-- Container -->
+<div id="container">
+  <div class="shell">
+    <!-- Small Nav -->
+    <!--<div class="small-nav"> <a href="#">Battery</a> <span>&gt;</span> Battery table </div>-->
+    <!-- End Small Nav -->
+    <!-- Message OK -->
+    <div class="msg msg-ok">
+      <!--<p><strong>Your file was uploaded succesifully!</strong></p>
+      <a href="#" class="close">close</a>--> </div>
+    <!-- End Message OK -->
+    <!-- Message Error -->
+    <div class="msg msg-error">
+      <!--<p><strong>You must select a file to upload first!</strong></p>
+      <a href="#" class="close">close</a> --></div>
+    <!-- End Message Error -->
+    <br />
+    <!-- Main -->
+    <div id="main">
+      <div class="cl">&nbsp;</div>
+      <!-- Content -->
+      <div id="content">
+        <!-- Box -->
+        <div class="box">
+          <!-- Box Head -->
+          <div class="box-head">
+            <h2 class="left">Battery Table</h2>
+            <div class="right">
+              <label>search location</label>
+              <input type="text" class="field small-field" />
+              <input type="submit" class="button" value="search" />
+            </div>
+          </div>
+          <!-- End Box Head -->
+          <!-- Table -->
+          <div class="table">
+            <table class="tablesorter" width="100%" border="0" cellspacing="0" cellpadding="0" id="BatteryTable">
+			  <thead>
+              <tr>
+                <th width="13"><input type="checkbox" class="checkboxAll" id="chkall" /></th>
+                <th>Location</th>
+                <th class="{sorter: 'floating'}">DC Voltage</th>
+                <th>Status</th>
+                <th width="110" class="ac">Remark</th>
+              </tr>
+			  </thead>
+
+			  <tbody>
+
+
+
+			  </tbody>
+              
+            </table>
+
+            <!-- Pagging -->
+            <div class="pagging">
+
+				
+               
+			
+              <!--<div class="left">Showing 1-12 of 44</div>-->
+			 <div class="right">  
+					<input onclick="addRemark()" type="button" class="button" value="Add remark"/> 
+			
+			   <input onclick="CheckBattAll()" type="button" class="button" value="Refresh"/> 
+               <input onclick="DeleteRow()" type="button" class="button" value="Delete"/> </div>
+			   <!-- <textarea type="text" id="clipboardData" value="444"> </textarea>  -->
+            </div>
+            <!-- End Pagging -->
+          </div>
+          <!-- Table -->
+        </div>
+        <!-- End Box -->
+        <!-- Box -->
+        <div class="box">
+          <!-- Box Head -->
+          <div class="box-head">
+            <h2>Add New Node</h2>
+          </div>
+          <!-- End Box Head -->
+          <form action="#" method="post">
+            <!-- Form -->
+            <div class="form">
+              <p> <span class="req">Location Code or IP</span>
+                <label>Location Code<span>(Required Field)</span></label>
+                <input type="text" class="field size1" id="locationField" />
+              </p>
+              <p class="inline-field">
+                <label>Date</label>
+                <select class="field size2">
+                  <option value="">23</option>
+                </select>
+                <select class="field size3">
+                  <option value="">July</option>
+                </select>
+                <select class="field size3">
+                  <option value="">2009</option>
+                </select>
+              </p>
+              <p> <span class="req">max 100 symbols</span>
+                <label>Content <span>(Required Field)</span></label>
+                <textarea class="field size1" rows="10" cols="30"></textarea>
+
+				
+              </p>
+            </div>
+            <!-- End Form -->
+            <!-- Form Buttons -->
+            <div class="buttons">
+              <input onclick="redirectToTicket()" type="button" class="button" value="preview" />
+              <input onclick="AddNode(1)" type="button" class="button" value="submit"/>
+
+				<script src="updateDC.js"> </script>
+
+            </div>
+            <!-- End Form Buttons -->
+          </form>
+        </div>
+        <!-- End Box -->
+      </div>
+      <!-- End Content -->
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <!-- Box -->
+        <div class="box">
+          <!-- Box Head -->
+          <div class="box-head">
+            <h2>Import Management</h2>
+          </div>
+          <!-- End Box Head-->
+          <div class="box-content"> 
+		  
+				<div id='pasteDiv' contenteditable='true'> 
+					
+						<textarea disabled placeholder style="font-size: 5pt" id="pasteArea" class="field sizeForPaste" style="resize: none;" rows="10" cols="30"></textarea>
+				</div>
+                <p></p>
+		  
+			<a  onclick="ImportNode()" class="add-button"><span>  &nbsp;&nbsp;&nbsp;Click here to import !&nbsp;&nbsp;&nbsp;  </span></a>
+            <div class="cl">&nbsp;</div>
+
+            
+              
+        
+            </p>
+            <!--<p><a href="#">Delete Selected</a></p>-->
+            <!-- Sort -->
+            <!--<div class="clipboard-paste">-->
+              
+			
+            </div>
+            <!-- End Sort -->
+          </div>
+        </div>
+        <!-- End Box -->
+      </div>
+      <!-- End Sidebar -->
+      <div class="cl">&nbsp;</div>
+    </div>
+    <!-- Main -->
+  </div>
+</div>
+<!-- End Container -->
+<!-- Footer -->
+<div id="footer">
+  <div class="shell"> <span class="left">&copy; 2016-2017 - MALAKOR</span> <span class="right"> Design by <a href="http://chocotemplates.com">Chocotemplates.com</a> </span> </div>
+</div>
+<!-- End Footer -->
+</body>
+</html>
